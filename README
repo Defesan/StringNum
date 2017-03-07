@@ -1,0 +1,28 @@
+Class StringNum
+Version 1.0
+Written by Jake Hopkins
+
+"Brushing the dust off"
+
+This is an exceedingly simple class that I used to flex my dormant
+programming muscles. If you actually have a use for it... Well, good 
+for you. The primary use, I'd imagine, would be in text formatting.
+
+StringNum is a Singleton class, and as such, you should not attempt to
+create a new instance of it. Instead, place the following line in global
+space:
+
+StringNum* StringNum::sRef == 0;
+
+This will initialize the class' static refrence pointer.
+
+The class has a single method, currently: string toDescriptive(long num)
+This method takes a long int, and converts it to a 'descriptive', which can 
+then be inserted into any string or stream as per usual. This descriptive 
+is a text representation of the number as it would be spoken aloud.
+
+To get this string, you have to ask the class for its instance.
+Example:
+	string desc = StringNum::instance()->toDescriptive(num);
+
+And that's about all you need to know!
