@@ -121,7 +121,7 @@ std::string StringNum::toDescriptive(long num)
 			} 
 		}
 	}
-
+    //base cases. Here, we have a number less than 100. In the first case, we deal with numbers greater than 19. These numbers all have the form <tens>(-units):twenty-three, fifty-nine.
 	if(remainder >= 20)
 	{
 		quotient = remainder / 10;
@@ -132,6 +132,7 @@ std::string StringNum::toDescriptive(long num)
 			descriptive += "-";
 		}
 	}
+	//If the number was less than 20, or the previous block extracted the units digit, the final number comes out of the units map.
 	if(remainder > 0)
 	{
 		descriptive += this->units[remainder];
