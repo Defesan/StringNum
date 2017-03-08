@@ -132,11 +132,10 @@ std::string StringNum::toDescriptive(long num)
 			descriptive += "-";
 		}
 	}
-	//If the number was less than 20, or the previous block extracted the units digit, the final number comes out of the units map.
+	//If the number was less than 20, or the previous block extracted the units digit, the final number comes out of the units map. huh?
 	if(remainder > 0)
 	{
 		descriptive += this->units[remainder];
 	}
-	
 	return descriptive;
 }
