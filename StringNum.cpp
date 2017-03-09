@@ -100,12 +100,17 @@ std::string StringNum::toDescriptive(long num)
 
 	for(int i = 0; i <= 6; i++)
 	{
+		//check to see if the number is larger than the current step value. if not, skip to the next.
 		if(remainder >= this->steps[i])
 		{
+			//This pulls out a number between 1 and 999...
 			quotient = remainder / this->steps[i];
+			//...which goes back through recursively.
 			temp = this->toDescriptive(quotient);
+			//the partial descriptive gets tacked on with the power attached.
 			descriptive += temp;
 			descriptive += this->powers[i];
+			//and finally, we remove the quotient's part of the number.
 			remainder -= quotient * this->steps[i];
 			if(remainder == 0)
 			{
